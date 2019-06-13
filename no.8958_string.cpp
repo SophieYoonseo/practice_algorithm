@@ -14,7 +14,7 @@ int main()
 	string str;
 	int count(0), sum(0);
 		
-	while(test>=0){
+	while(test>0){
 		getline(cin, str);
 	
 		for(int i=0; i < str.length(); i++){
