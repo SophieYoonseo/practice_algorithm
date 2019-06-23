@@ -27,6 +27,17 @@ int main()
 		}
 	}
 	
+	//insertionSort
+	for(int i=0; i<num-1; i++){
+        int j = i;
+        while(j>=0 && arr[j] > arr[j+1]){
+            temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+            j--;
+        }
+    } 
+	 
 	for(int i=0; i<num; i++){
 		cout<<arr[i]<<"\n";
 	}
