@@ -1,13 +1,18 @@
-#include <stdio.h>
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
-	int N;
-	int mul=0;
-	scanf("%d", &N);
-	for(int i=1; i<10; i++)
-	{
-		mul=N*i;
-		printf("%d * %d = %d\n",N,i,mul);
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	
+	int num(0), mul(0);
+	cin>>num;
+	
+	for(int i=1; i<10; i++){
+		mul = num*i;
+		cout<<num<<" "<<"*"<<" "<<i<<" "<<"="<<" "<<mul<<"\n";
 	}
+	return 0;
 }

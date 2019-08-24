@@ -12,5 +12,7 @@ int main()
 	
 	for(int i=1; i<=n; i++)
 		sum += i;
-	cout<<sum<<"\n";	
+	cout<<sum<<"\n";
+	
+	return 0;	
 }
