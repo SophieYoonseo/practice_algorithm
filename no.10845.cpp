@@ -14,55 +14,50 @@ int main()
 	
 	queue<int> q;
 	
-	for(int i=0; i<num; i++){
+	while(num != 0){
 		string str;
 		cin>>str;
 		
-		if(str == "push"){
-			int n(0);
-			cin>>n;
-			q.push(n);
+		if(str=="push"){
+			int temp(0);
+			cin>>temp;
+			q.push(temp);
 		}
-		else if(str == "pop"){
-			if(!q.empty()){
+		else if(str=="pop"){
+			if(q.empty())	cout<<"-1"<<"\n";
+			else{
 				cout<<q.front()<<"\n";
 				q.pop();
 			}
-			else
-				cout<<-1<<"\n";
 		}
-		else if(str == "size")
-			cout<<q.size()<<"\n";
-		else if(str == "empty")
-			cout<<q.empty()<<"\n";
-		else if(str == "front"){
-			if(!q.empty())
-				cout<<q.front()<<"\n";
-			else
-				cout<<-1<<"\n";
+		else if(str=="size")	cout<<q.size()<<"\n";
+		else if(str=="empty")	cout<<q.empty()<<"\n";
+		else if(str=="front"){
+			if(q.empty())	cout<<"-1"<<"\n";
+			else	cout<<q.front()<<"\n";
 		}
-		else if(str == "back"){
-			if(!q.empty()){
+		else if(str=="back"){
+			if(q.empty())	cout<<"-1"<<"\n";
+			else{
 				int curSize = q.size();
-				//현재 큐 크기-1 만큼 반복문을 돌리면 front를 뒤로 넣는다. 
 				
-				for(int j=0; j<curSize-1; j++){
-					int n = q.front();
+				//send back the value at the front through repeat sentence
+				for(int i=0; i<curSize-1; i++){
+					int temp = q.front();
 					q.pop();
-					q.push(n);
+					q.push(temp);
 				}
 				
-				//반복문 수행 후 front는 back 
-				int n = q.front();
+				//after iteration, the front has the rearmost value 
+				int ans=q.front();
 				q.pop();
-				cout<<n<<"\n";
+				cout<<ans<<"\n";
 				
-				//원상복귀
-				q.push(n); 
+				//return to the original state
+				q.push(ans); 
 			}
-			else
-				cout<<-1<<"\n";
-		}		
+		}
+		num--;		
 	}
 	return 0;
 }
